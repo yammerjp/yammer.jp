@@ -22,8 +22,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
           {children}
         </div>
         <footer>
-          {/* TODO: -2022を削除 */}
-          <div>©2020-2022 <a href="https://github.com/yammerjp">yammer</a></div>
+          <div>©2020 <a href="https://github.com/yammerjp">yammer</a></div>
         </footer>
         <Scripts />
       </body>
