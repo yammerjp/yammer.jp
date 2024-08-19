@@ -1,4 +1,4 @@
-import { redirect } from "@remix-run/node";
+import { redirect } from "@remix-run/cloudflare";
 import { LoaderFunctionArgs } from "@remix-run/cloudflare";
 
 const githubPagesRepositories = [
