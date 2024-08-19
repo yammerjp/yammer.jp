@@ -1,0 +1,56 @@
+[
+  {
+    "title": "AI時代のECサイト運営体験: カラーミーショップとOpenAI GPTsでつくる、ショップ運営アシスタント",
+    "url": "https://tech.pepabo.com/2024/01/11/colormeshop-and-openai-gpts/",
+    "id": "https://tech.pepabo.com/2024/01/11/colormeshop-and-openai-gpts/",
+    "date_published": "2024-01-11T00:00:00+09:00",
+    "content_text": "昨今、OpenAIのChatGPTをはじめとする、生成AIの発展が注目されています。 弊社の運営するECサイト構築サービス カラーミーショップ においても、生成AIの活用を進めています。 2023年には、カラーミーAIアシスタント(β)をリリースしました。今回は、昨年提供を開始した生成AIに関連する機能とは少し違う、生成AIとカラーミーショップの使い方について説明します。 OpenAI GPTsとカラーミーショップAPIを組み合わせて作成できる、ショップ運営アシスタントの紹介です。",
+    "_site_name": "Pepabo Tech Portal"
+  },
+  {
+    "title": "PHPerKaigi2023 レポート",
+    "url": "https://tech.pepabo.com/2023/04/28/phperkaigi2023/",
+    "id": "https://tech.pepabo.com/2023/04/28/phperkaigi2023/",
+    "date_published": "2023-04-28T00:00:00+09:00",
+    "content_text": "こんにちは、EC事業部でエンジニアをしているやんまーです。去る2023/03/23〜25、練馬区立区民・産業プラザ Coconeriホールとニコニコ動画にて、PHPerKaigi 2023が開催されました。GMOペパボ株式会社からも、登壇を始めとした様々な形でイベントに参加したので、パートナーより当日の様子をお届けします。",
+    "_site_name": "Pepabo Tech Portal"
+  },
+  {
+    "title": "PHP Conference Japan 2022に登壇しました",
+    "url": "https://tech.pepabo.com/2022/12/15/phpcon2022/",
+    "id": "https://tech.pepabo.com/2022/12/15/phpcon2022/",
+    "date_published": "2022-12-15T00:00:00+09:00",
+    "content_text": "こんにちは、EC事業部のやんまーです。9/24,25の2日間、大田区産業プラザPiOで開かれたPHP Conference Japan2022にて、GMOインターネットグループのスポンサーセッションにて、17年続くWebサービスを改善する 〜新卒2年目からみるカラーミーショップ〜と題して、ほみるんと一緒に登壇しました。本記事では登壇の前後をレポートします。",
+    "_site_name": "Pepabo Tech Portal"
+  },
+  {
+    "title": "PHPクイズの解答と解説 (PHP Conference Japan 2022)",
+    "url": "https://tech.pepabo.com/2022/10/05/php-conference-japan-2022-quiz/",
+    "id": "https://tech.pepabo.com/2022/10/05/php-conference-japan-2022-quiz/",
+    "date_published": "2022-10-05T00:00:00+09:00",
+    "content_text": "こんにちは！カラーミーショップのエンジニアをしているやんまーです。 2022/09/24〜25に開催されたPHP Conference Japan 2022において、GMOインターネットグループはブース「PHP神社」でPHPに関するクイズを出題しておりました。 当日GMOインターネットグループのブースに来てくださった方、PHPクイズに参加してくださった方、ありがとうございました。本記事ではクイズの問題を紹介し、解答と解説をいたします。 解答と解説は折りたたんでいるので、現地で参加されていない方も本記事でクイズをお楽しみください。",
+    "_site_name": "Pepabo Tech Portal"
+  },
+  {
+    "title": "Pepabo Tech Friday 2022年6月の活動記録",
+    "url": "https://tech.pepabo.com/2022/06/17/pepabo-tech-friday-2022-06/",
+    "id": "https://tech.pepabo.com/2022/06/17/pepabo-tech-friday-2022-06/",
+    "date_published": "2022-06-17T00:00:00+09:00",
+    "content_text": "GMOペパボでは毎月第2金曜日の夕方にPepabo Tech Friday(通称PTF)という社内の技術発表会を行っています。 詳しくは以下のリンクをご参照ください。 Pepabo Tech Friday 始まってます! 今回は、2022年6月10日に開催されたPTFの活動記録です。前回の活動記録はPepabo Tech Friday 2022年4月の活動記録です。 ",
+    "_site_name": "Pepabo Tech Portal"
+  },{
+    "title": "新卒エンジニア研修2021に参加しました (前編)",
+    "url": "https://tech.pepabo.com/2021/10/04/newbiew-training-2021-participants-01/",
+    "id": "https://tech.pepabo.com/2021/10/04/newbiew-training-2021-participants-01/",
+    "date_published": "2021-10-04T00:00:00+09:00",
+    "content_text": "こんにちは！ 6月から8月にかけて、新卒パートナーを対象としてエンジニア研修が実施されました。 現在は各事業部に配属された新卒パートナーが、研修に参加して得た中での気づきを振り返りながら紹介します。 研修内容については、先日公開された 「GMOペパボのエンジニア研修2021の資料を公開します」 において講師陣が紹介しておりますので、ぜひそちらもご覧ください！",
+    "_site_name": "Pepabo Tech Portal"
+  },{
+    "title": "DBモデリングとRSpecのワークショップを行いました",
+    "url": "https://tech.pepabo.com/2021/09/22/igaiga-workshop/",
+    "id": "https://tech.pepabo.com/2021/09/22/igaiga-workshop/",
+    "date_published": "2021-09-22T00:00:00+09:00",
+    "content_text": "皆さんこんにちは！2021 年の新卒エンジニア研修ではフリーランスのRailsエンジニアであるigaigaさんをお招きし2つのワークショップを行いました。1つ目はデータベース（DB）のモデリングについて、2つ目はRailsのテストフレームワークであるRSpecについてです！この記事ではそれぞれのワークショップの様子や学んだことについて参加したメンバーがお伝えして行きたいと思います！",
+    "_site_name": "Pepabo Tech Portal"
+  }
+]

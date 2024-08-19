@@ -1,0 +1,58 @@
+[
+  {
+        "title": "最強の開発環境 探求の道 - 第7回(最終回) dotfilesの管理を発展させる",
+        "url": "https://gihyo.jp/magazine/SD/archive/2023/202307",
+        "id": "https://gihyo.jp/magazine/SD/archive/2023/202307",
+        "date_published": "2023-06-16T00:00:00+09:00",
+        "content_html": "<div>Software Design 2023年7月号</div><div>最強の開発環境 探求の道</div><div>dotfilesの管理を発展させる</div><div>発行元: 技術評論社</div>"
+  },
+  {
+        "title": "最強の開発環境 探求の道 - 第6回 拡張機能やプラグインを使う",
+        "url": "https://gihyo.jp/magazine/SD/archive/2023/202306",
+        "id": "https://gihyo.jp/magazine/SD/archive/2023/202306",
+        "date_published": "2023-05-18T00:00:00+09:00",
+        "content_html": "<div>Software Design 2023年6月号</div><div>最強の開発環境 探求の道</div><div>拡張機能やプラグインを使う</div><div>発行元: 技術評論社</div>"
+  },
+  {
+        "title": "最強の開発環境 探求の道 - 第5回 テキストエディタをカスタマイズする ",
+        "url": "https://gihyo.jp/magazine/SD/archive/2023/202305",
+        "id": "https://gihyo.jp/magazine/SD/archive/2023/202305",
+        "date_published": "2023-04-18T00:00:00+09:00",
+        "content_html": "<div>Software Design 2023年5月号</div><div>最強の開発環境 探求の道</div><div>第5回 テキストエディタをカスタマイズする</div><div>発行元: 技術評論社</div>"
+  },
+  {
+        "title": "最強の開発環境 探求の道 - 第4回 環境構築を自動化する ",
+        "url": "https://gihyo.jp/magazine/SD/archive/2023/202304",
+        "id": "https://gihyo.jp/magazine/SD/archive/2023/202304",
+        "date_published": "2023-03-17T00:00:00+09:00",
+        "content_html": "<div>Software Design 2023年4月号</div><div>最強の開発環境 探求の道</div><div>第4回 環境構築を自動化する</div><div>発行元: 技術評論社</div>"
+  },
+  {
+        "title": "最強の開発環境 探求の道 - 第3回 ターミナルをカスタマイズする ",
+        "url": "https://gihyo.jp/magazine/SD/archive/2023/202303",
+        "id": "https://gihyo.jp/magazine/SD/archive/2023/202303",
+        "date_published": "2023-02-17T00:00:00+09:00",
+        "content_html": "<div>Software Design 2023年3月号</div><div>最強の開発環境 探求の道</div><div>第3回 ターミナルをカスタマイズする</div><div>発行元: 技術評論社</div>"
+  },
+  {
+        "title": "最強の開発環境 探求の道 - 第2回 シェルをカスタマイズする ",
+        "url": "https://gihyo.jp/magazine/SD/archive/2023/202302",
+        "id": "https://gihyo.jp/magazine/SD/archive/2023/202302",
+        "date_published": "2023-01-18T00:00:00+09:00",
+        "content_html": "<div>Software Design 2023年2月号</div><div>最強の開発環境 探求の道</div><div>第2回 シェルをカスタマイズする</div><div>発行元: 技術評論社</div>"
+  },
+  {
+        "title": "最強の開発環境 探求の道 - 第1回 dotfilesを管理して，再現可能な開発環境を作る ",
+        "url": "https://gihyo.jp/magazine/SD/archive/2023/202301",
+        "id": "https://gihyo.jp/magazine/SD/archive/2023/202301",
+        "date_published": "2022-12-16T00:00:00+09:00",
+        "content_html": "<div>Software Design 2023年1月号</div><div>新連載 最強の開発環境 探求の道</div><div>第1回 dotfilesを管理して，再現可能な開発環境を作る</div><div>発行元: 技術評論社</div>"
+  },
+  {
+        "title": "dotfilesのススメ",
+        "url": "https://gihyo.jp/magazine/SD/archive/2022/202206",
+        "id": "https://gihyo.jp/magazine/SD/archive/2022/202206",
+        "date_published": "2022-05-18T00:00:00+09:00",
+        "content_html": "<div>Software Design 2022年6月号</div><div>第一特集 シェルの基本大全 どんな環境でも迷わない・困らない知識</div><div>Appendix: dotfilesのススメ どこでもサクッと自分好みの設定を適用しよう！</div><div>発行元: 技術評論社</div>"
+  }
+]
