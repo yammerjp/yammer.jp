@@ -13,7 +13,7 @@ export function FeedItemCards(props: {
             props.message
           ) : (
             props.items.map((item, i) => (
-              <FeedItemCard key={i} item={item} isFirst={i === 0} />
+              <FeedItemCard key={item.id} item={item} isFirst={i === 0} />
             ))
           )}
         </div>
