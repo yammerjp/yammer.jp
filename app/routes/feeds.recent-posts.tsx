@@ -2,8 +2,6 @@ import type { MetaFunction } from "@remix-run/cloudflare";
 import { json } from "@remix-run/cloudflare";
 import { useLoaderData } from "@remix-run/react";
 
-import { Avater } from "../components/Avater";
-import { Links } from "../components/Links";
 import { FeedItemCards } from "../components/FeedItemCards";
 import { TabSelector } from "../components/TabSelector";
 import { fetchAndTransformFeeds } from "../utils/FeedTransformer";
@@ -58,13 +56,9 @@ export const meta: MetaFunction = () => {
 export default function Index() {
   const {message, items} = useLoaderData<typeof loader>();
   return (
-    <>
-      <Avater />
-      <Links />
-      {/* TabSelector.svelte */}
+    <div>
       <TabSelector selected="投稿" />
-
       <FeedItemCards items={items} message={message} />
-    </>
+    </div>
   );
 }
