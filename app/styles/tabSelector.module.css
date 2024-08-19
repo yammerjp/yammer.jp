@@ -1,0 +1,38 @@
+.tabSelector {
+    text-decoration: none;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    outline: none;
+    padding: 0;
+    appearance: none;
+    padding: 12px 16px;
+    margin: 0;
+    border-bottom: solid 2px #eeeeee;
+    font-size: 1.0rem;
+    font-family: Avenir, Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    color: #2c3e50;
+}
+
+.tabSelector:hover {
+    border-bottom: solid 2px #999999;
+}
+
+.tabSelector.selected {
+    border-bottom: solid 2px #999999;
+}
+
+nav.tabSelectorWrapper::after {
+    flex-grow: 1;
+    border-bottom: solid 2px #eeeeee;
+    content: '';
+    display: block;
+}
+
+nav.tabSelectorWrapper {
+    margin-top: 48px;
+    display: flex;
+    overflow-x: auto;
+}

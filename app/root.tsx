@@ -5,7 +5,9 @@ import {
   Scripts,
   ScrollRestoration,
 } from "@remix-run/react";
-import "./tailwind.css";
+import "./styles/global.css";
+
+import rootStyle from "./styles/root.module.css";
 
 export function Layout({ children }: { children: React.ReactNode }) {
   return (
@@ -17,7 +19,13 @@ export function Layout({ children }: { children: React.ReactNode }) {
         <Links />
       </head>
       <body>
-        {children}
+        <div className={rootStyle.root}>
+          {children}
+        </div>
+        <footer>
+          {/* TODO: -2022を削除 */}
+          <div>©2020-2022 <a href="https://github.com/yammerjp">yammer</a></div>
+        </footer>
         <ScrollRestoration />
         <Scripts />
       </body>

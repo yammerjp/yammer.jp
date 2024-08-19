@@ -1,0 +1,26 @@
+body {
+  padding: 0;
+  margin: 0;
+}
+
+html {
+ overflow-y: scroll;
+}
+
+a {
+  /*
+  color: #42b983;
+  */
+  color: #5da4de;
+}
+footer {
+  max-width: 800px;
+  margin: 50px auto 0 auto;
+  padding: 0 16px;
+  color: #777777;
+}
+h2 {
+  margin-top: 50px;
+  margin-bottom: 10px;
+}
+
