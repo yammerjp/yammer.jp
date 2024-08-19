@@ -25,31 +25,7 @@ async function loadArticles(): Promise<{message: string, items: JsonFeedItem[]}>
 
 export const meta: MetaFunction = () => {
   return [
-    { title: "yammer.jp" },
-    {
-      name: "description",
-      content: "yammer is a Web Developper and a Scuba Diver",
-    },
-    {
-      property: "og:title",
-      content: "yammer.jp",
-    },
-    {
-      property: "og:type",
-      content: "website",
-    },
-    {
-      property: "og:description",
-      content: "yammer is a Web Developper and a Scuba Diver",
-    },
-    {
-      property: "og:url",
-      content: "https://yammer.jp",
-    },
-    {
-      property: "og:image",
-      content: "https://yammer.jp/assets/ogp-20201204.png",
-    },
+    { title: "投稿 - yammer.jp" },
   ];
 };
 

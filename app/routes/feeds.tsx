@@ -1,5 +1,4 @@
 import type { MetaFunction } from "@remix-run/cloudflare";
-import { json } from "@remix-run/cloudflare";
 import { Outlet } from "@remix-run/react";
 
 import { Avater } from "../components/Avater";
@@ -7,7 +6,6 @@ import { Links } from "../components/Links";
 
 export const meta: MetaFunction = () => {
   return [
-    { title: "yammer.jp" },
     {
       name: "description",
       content: "yammer is a Web Developper and a Scuba Diver",
