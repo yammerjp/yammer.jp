@@ -71,15 +71,15 @@ id = "8c0bf945be8f4fe6b3543d630246b4e4"
 # [env.preview.vars]
 # API_KEY = "xyz789"
 
-# [[env.preview.kv_namespaces]]
-# binding = "MY_KV_NAMESPACE"
-# id = "<PREVIEW_NAMESPACE_ID>"
+[[env.preview.kv_namespaces]]
+binding = "MY_KV_NAMESPACE"
+id = "125f91efb0594fe9b17d103887cf66f8"
 
 ######## PRODUCTION environment config ########
 
 # [env.production.vars]
 # API_KEY = "abc123"
 
-# [[env.production.kv_namespaces]]
-# binding = "MY_KV_NAMESPACE"
-# id = "<PRODUCTION_NAMESPACE_ID>"
+[[env.production.kv_namespaces]]
+binding = "YAMMER_JP_CACHE"
+id = "8c0bf945be8f4fe6b3543d630246b4e4"

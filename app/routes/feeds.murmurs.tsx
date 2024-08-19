@@ -1,4 +1,4 @@
-import type { MetaFunction } from "@remix-run/cloudflare";
+import type { MetaFunction, LoaderFunctionArgs } from "@remix-run/cloudflare";
 import { json } from "@remix-run/cloudflare";
 import { useLoaderData } from "@remix-run/react";
 
@@ -7,13 +7,17 @@ import { TabSelector } from "../components/TabSelector";
 import { transformFeeds } from "../utils/FeedTransformer";
 import type { JsonFeedItem } from "../types/JsonFeedItem";
 
-export async function loader() {
+export async function loader({context}: LoaderFunctionArgs) {
   return json(
-    await loadArticles()
+    await loadArticles(context.cloudflare.env.YAMMER_JP_CACHE)
   );
 }
 
-async function loadArticles(): Promise<{message: string, items: JsonFeedItem[]}> {
+async function loadArticles(kv: KVNamespace): Promise<{message: string, items: JsonFeedItem[]}> {
+  const cachedStr = await kv.get('caches/feeds/murmurs');
+  if (cachedStr) {
+    return {message: "", items: JSON.parse(cachedStr)};
+  }
   const baseUrl = "https://usememos.yammer.jp/api/v1/memos?filter=creator=='users/1'";
   let url = baseUrl;
   const feeds: JsonFeedItem[] = [];
@@ -37,7 +41,9 @@ async function loadArticles(): Promise<{message: string, items: JsonFeedItem[]}>
     }
     url = baseUrl + `&pageToken=${responseJson.nextPageToken}`;
   }
-  return {message: "", items: transformFeeds(feeds)};
+  const items = transformFeeds(feeds);
+  await kv.put('caches/feeds/murmurs', JSON.stringify(items), {expirationTtl: 60 * 60});
+  return {message: "", items};
 }
 
 export const meta: MetaFunction = () => {

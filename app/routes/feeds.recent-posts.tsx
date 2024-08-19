@@ -1,4 +1,4 @@
-import type { MetaFunction } from "@remix-run/cloudflare";
+import type { LoaderFunctionArgs, MetaFunction } from "@remix-run/cloudflare";
 import { json } from "@remix-run/cloudflare";
 import { useLoaderData } from "@remix-run/react";
 
@@ -7,20 +7,29 @@ import { TabSelector } from "../components/TabSelector";
 import { fetchAndTransformFeeds } from "../utils/FeedTransformer";
 import type { JsonFeedItem } from "../types/JsonFeedItem";
 
-export async function loader() {
+export async function loader({context}: LoaderFunctionArgs) {
   return json(
-    await loadArticles()
+    await loadArticles(context.cloudflare.env.YAMMER_JP_CACHE)
   );
 }
 
-async function loadArticles(): Promise<{message: string, items: JsonFeedItem[]}> {
-  const feeds = await fetchAndTransformFeeds('https://rsss.yammer.jp/v0/json_feed');
-  if (feeds.length > 0) {
-    return {message: "", items: feeds};
-  } else {
-    return {message: "No posts found", items: []};
+async function loadArticles(kv: KVNamespace): Promise<{message: string, items: JsonFeedItem[]}> {
+  try {
+    const cachedStr = await kv.get('caches/feeds/recent-posts');
+    if (cachedStr) {
+      return {message: "", items: JSON.parse(cachedStr)};
+    }
+    const feeds = await fetchAndTransformFeeds('https://rsss.yammer.jp/v0/json_feed');
+    if (feeds.length > 0) {
+      await kv.put('caches/feeds/recent-posts', JSON.stringify(feeds), {expirationTtl: 60 * 60});
+      return {message: "", items: feeds};
+    } else {
+      return {message: "No posts found", items: []};
+    }
+  } catch (error) {
+    console.log(error);
+    return {message: "Error fetching posts", items: []};
   }
-
 }
 
 export const meta: MetaFunction = () => {
