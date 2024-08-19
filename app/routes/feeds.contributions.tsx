@@ -6,7 +6,7 @@ import { FeedItemCards } from "../components/FeedItemCards";
 import { TabSelector } from "../components/TabSelector";
 import { transformFeeds } from "../utils/FeedTransformer";
 import type { JsonFeedItem } from "../types/JsonFeedItem";
-import slides from "../data/slides.json";
+import slides from "../data/contributions.json";
 
 export async function loader() {
   return json(
@@ -26,7 +26,7 @@ async function loadArticles(): Promise<{message: string, items: JsonFeedItem[]}>
 
 export const meta: MetaFunction = () => {
   return [
-    { title: "発表 - yammer.jp" },
+    { title: "寄稿 - yammer.jp" },
   ];
 };
 
@@ -34,7 +34,7 @@ export default function Index() {
   const {message, items} = useLoaderData<typeof loader>();
   return (
     <div>
-      <TabSelector selected="発表" />
+      <TabSelector selected="寄稿" />
       <FeedItemCards items={items} message={message} />
     </div>
   );
