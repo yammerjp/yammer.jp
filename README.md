@@ -1,47 +1,42 @@
-# Welcome to Remix + Cloudflare!
+# yammer's Personal Website
 
-- 📖 [Remix docs](https://remix.run/docs)
-- 📖 [Remix Cloudflare docs](https://remix.run/guides/vite#cloudflare)
+😆😆😆 https://yammer.jp 😆😆😆
 
-## Development
+This repository contains the code for my personal website, built using Remix for server-side rendering (SSR). The site utilizes Cloudflare KV for caching and runs on Cloudflare Workers.
 
-Run the dev server:
+## Features
 
-```sh
-npm run dev
-```
+- Server-Side Rendering with Remix
+- JSON data fetching and caching with Cloudflare KV
+- Deployed on Cloudflare Workers
 
-To run Wrangler:
+## Getting Started
 
-```sh
-npm run build
-npm run start
-```
+1. **Clone the repository:**
 
-## Typegen
+    ```bash
+    git clone https://github.com/yammerjp/yammer.jp.git
+    cd yammer.jp
+    ```
 
-Generate types for your Cloudflare bindings in `wrangler.toml`:
+2. **Install dependencies:**
 
-```sh
-npm run typegen
-```
+    ```bash
+    npm install
+    ```
 
-You will need to rerun typegen whenever you make changes to `wrangler.toml`.
+3. **Run the development server:**
 
-## Deployment
+    ```bash
+    npm run dev
+    ```
 
-First, build your app for production:
+4. **Deploy to Cloudflare Workers:**
 
-```sh
-npm run build
-```
+    ```bash
+    npm run deploy
+    ```
 
-Then, deploy your app to Cloudflare Pages:
+## License
 
-```sh
-npm run deploy
-```
-
-## Styling
-
-This template comes with [Tailwind CSS](https://tailwindcss.com/) already configured for a simple default starting experience. You can use whatever css framework you prefer. See the [Vite docs on css](https://vitejs.dev/guide/features.html#css) for more information.
+This project is licensed under the MIT License.
