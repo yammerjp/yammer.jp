@@ -8,42 +8,40 @@ import { transformFeeds } from "../utils/FeedTransformer";
 import type { JsonFeedItem } from "../types/JsonFeedItem";
 
 export async function loader({context}: LoaderFunctionArgs) {
-  return json(
-    await loadArticles(context.cloudflare.env.YAMMER_JP_CACHE)
-  );
-}
-
-async function loadArticles(kv: KVNamespace): Promise<{message: string, items: JsonFeedItem[]}> {
+  const kv = context.cloudflare.env.YAMMER_JP_CACHE
   const cachedStr = await kv.get('caches/feeds/murmurs');
   if (cachedStr) {
-    return {message: "", items: JSON.parse(cachedStr)};
+    return json({message: "", items: JSON.parse(cachedStr)});
   }
-  const baseUrl = "https://usememos.yammer.jp/api/v1/memos?filter=creator=='users/1'";
-  let url = baseUrl;
-  const feeds: JsonFeedItem[] = [];
-  while(1) {
-    const responseJson = (await fetch(url).then(res =>res.json())) as any;
-    if (!Array.isArray(responseJson?.memos)) {
+
+  const items = await fetchFeeds()
+  await kv.put('caches/feeds/murmurs', JSON.stringify(items), {expirationTtl: 60 * 60});
+  return json({message: "", items });
+}
+
+
+async function fetchFeeds(): Promise<JsonFeedItem[]> {
+  const baseURL = "https://usememos.yammer.jp/api/v1/memos?filter=creator=='users/1'"
+
+  let url = baseURL
+  const items: JsonFeedItem[] = []
+  while(url) {
+    const responseJson = await fetch(url).then(res =>res.json()) as {memos: {uid: string, content: string, createTime: string}[], nextPageToken?: string}
+    if (!Array.isArray(responseJson.memos) || !responseJson.nextPageToken) {
       break;
     }
-    const feedFlagments = responseJson.memos.map((item: any) => (
+    url = baseURL + `&pageToken=${responseJson.nextPageToken}`
+    items.push(...responseJson.memos.map(memo => (
       {
-        id: item.uid,
-        url: `https://usememos.yammer.jp/m/${item.uid}`,
+        id: memo.uid,
+        url: `https://usememos.yammer.jp/m/${memo.uid}`,
         title: "",
-        content_text: item.content,
-        date_published: new Date(item.createTime).toISOString(),
+        content_text: memo.content,
+        date_published: new Date(memo.createTime).toISOString(),
       }
-    )).filter((item: any) => item.content_text.trim().length > 0)
-    feeds.push(...feedFlagments);
-    if (!responseJson.nextPageToken) {
-      break
-    }
-    url = baseUrl + `&pageToken=${responseJson.nextPageToken}`;
+    )))
   }
-  const items = transformFeeds(feeds);
-  await kv.put('caches/feeds/murmurs', JSON.stringify(items), {expirationTtl: 60 * 60});
-  return {message: "", items};
+  return transformFeeds(items)
 }
 
 export const meta: MetaFunction = () => {

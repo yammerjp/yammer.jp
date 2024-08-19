@@ -1,5 +1,8 @@
-import { fetchFeeds } from './JsonFeedFetcher'
-import type { JsonFeedItemWithSummary } from './JsonFeedFetcher'
+import type { JsonFeedItem } from '../types/JsonFeedItem'
+
+interface JsonFeedItemWithSummary extends JsonFeedItem {
+  summary?: string;
+}
 
 const siteNameCorrespondences = [
   {
@@ -33,7 +36,7 @@ const siteNameCorrespondences = [
   }
 ]
 
-const　url2fqdn = (url: string): string => {
+const url2fqdn = (url: string): string => {
   return url.split(':').
     flatMap(s => s?.split('/')).
     flatMap(s => s?.split('?')).
@@ -51,5 +54,3 @@ export const transformFeeds = (feeds: JsonFeedItemWithSummary[]) => feeds.map(el
   content_text: elm.summary ?? elm.content_text,
   _site_name: siteName(elm.url)
 }))
-
-export const fetchAndTransformFeeds = (url: string) => fetchFeeds(url).then(transformFeeds)

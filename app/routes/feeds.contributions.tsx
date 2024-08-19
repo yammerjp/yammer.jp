@@ -15,7 +15,7 @@ export async function loader() {
 }
 
 async function loadArticles(): Promise<{message: string, items: JsonFeedItem[]}> {
-  const feeds = await transformFeeds(slides);
+  const feeds = transformFeeds(slides);
   if (feeds.length > 0) {
     return {message: "", items: feeds};
   } else {
