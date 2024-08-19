@@ -1,33 +1,42 @@
 import tabSelectorStyle from "./TabSelector.module.css";
-
+import { Link } from "@remix-run/react";
 export function TabSelector(
     props: {
         selected: string;
     }
 ) {
+  const tabs = [
+    {
+      label: '投稿',
+      to: '/feeds/recent-posts',
+    },
+    {
+      label: '発表',
+      to: '/feeds/slides',
+    },
+    {
+      label: '寄稿',
+      to: '/feeds/contributions',
+    },
+    {
+      label: '関連',
+      to: '/feeds/related-posts',
+    },
+    {
+      label: '近況',
+      to: '/feeds/murmurs',
+    },
+  ]
     return (
       <div className={tabSelectorStyle.tabsContainer}>
         <nav className={tabSelectorStyle.tabSelectorWrapper}>
-          <a 
-            className={tabSelectorStyle.tabSelector + ' ' + (props.selected === '投稿' ? tabSelectorStyle.selected : '')}
-            href="/feeds/recent-posts"
-          >投稿</a>
-          <a 
-            className={tabSelectorStyle.tabSelector + ' ' + (props.selected === '発表' ? tabSelectorStyle.selected : '')}
-            href="/feeds/slides"
-          >発表</a>
-          <a 
-            className={tabSelectorStyle.tabSelector + ' ' + (props.selected === '寄稿' ? tabSelectorStyle.selected : '')}
-            href="/feeds/contributions"
-          >寄稿</a>
-          <a 
-            className={tabSelectorStyle.tabSelector + ' ' + (props.selected === '関連' ? tabSelectorStyle.selected : '')}
-            href="/feeds/related-posts"
-          >関連</a>
-          <a 
-            className={tabSelectorStyle.tabSelector + ' ' + (props.selected === '近況' ? tabSelectorStyle.selected : '')}
-            href="/feeds/murmurs"
-          >近況</a>
+          {tabs.map((tab) => (
+          <Link
+            key={tab.label}
+            className={tabSelectorStyle.tabSelector + ' ' + (props.selected === tab.label ? tabSelectorStyle.selected : '')}
+            to={tab.to}
+          >{tab.label}</Link>
+          ))}
         </nav>
       </div>
     );

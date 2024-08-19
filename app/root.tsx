@@ -3,7 +3,6 @@ import {
   Meta,
   Outlet,
   Scripts,
-  ScrollRestoration,
 } from "@remix-run/react";
 import "./styles/global.css";
 
@@ -26,7 +25,6 @@ export function Layout({ children }: { children: React.ReactNode }) {
           {/* TODO: -2022を削除 */}
           <div>©2020-2022 <a href="https://github.com/yammerjp">yammer</a></div>
         </footer>
-        <ScrollRestoration />
         <Scripts />
       </body>
     </html>
