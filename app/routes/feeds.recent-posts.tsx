@@ -32,9 +32,9 @@ export const meta: MetaFunction = () => {
 export default function Index() {
   const {message, items} = useLoaderData<typeof loader>();
   return (
-    <div>
+    <>
       <TabSelector selected="投稿" />
       <FeedItemCards items={items} message={message} />
-    </div>
+    </>
   );
 }
