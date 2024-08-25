@@ -6,21 +6,24 @@ import { FeedItemCards } from "../components/FeedItemCards";
 import { TabSelector } from "../components/TabSelector";
 import { transformFeeds } from "../utils/FeedTransformer";
 import type { JsonFeedItem } from "../types/JsonFeedItem";
+import { withCache } from "../utils/withCache";
+
+import type { AppLoadContext } from "@remix-run/cloudflare";
 
 export async function loader({context}: LoaderFunctionArgs) {
-  const kv = context.cloudflare.env.YAMMER_JP_CACHE
-  const cachedStr = await kv.get('caches/feeds/recent-posts');
-  if (cachedStr) {
-    return json({message: "", items: JSON.parse(cachedStr)});
-  }
-  const feeds = await fetchFeeds();
-  await kv.put('caches/feeds/recent-posts', JSON.stringify(feeds), {expirationTtl: 60 * 60});
-  return json({message: "", items: feeds});
+  return json(
+    {
+      message: "",
+      items: await fetchFeedsWithCache(context)
+    }
+  );
 }
 
-const fetchFeeds = async () => {
-  const resObj = await fetch('https://rsss.yammer.jp/v0/json_feed').then(res => res.json()) as {items: JsonFeedItem[]};
-  return transformFeeds(resObj.items);
+export async function fetchFeedsWithCache(context: AppLoadContext): Promise<JsonFeedItem[]> {
+  return await withCache<JsonFeedItem[]>(async () => {
+    const resObj = await fetch('https://rsss.yammer.jp/v0/json_feed').then(res => res.json()) as {items: JsonFeedItem[]};
+    return transformFeeds(resObj.items);
+  }, {context, key: 'caches/feeds/recent-posts'})
 }
 
 export const meta: MetaFunction = () => {
