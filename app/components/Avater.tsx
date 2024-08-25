@@ -7,14 +7,20 @@ export function Avater() {
       <div className={styles.avater}>
         <div className={styles.avaterContainer}>
           <div className={styles.avaterContainerStart}>
-            <img
-              src="/assets/gather_fishes_200x200.jpg"
-              srcSet="/assets/gather_fishes_200x200.jpg 1x, /assets/gather_fishes_400x400.jpg 2x"
-              className={styles.avaterIcon}
-              alt="yammerjp avater icon"
-              width="200px"
-              height="200px"
-            />
+            <picture>
+                {/* 1x and 2x, webp and jpg */}
+                <source srcSet="/assets/gather_fishes_400x400.webp 2x" type="image/webp"/>
+                <source srcSet="/assets/gather_fishes_400x400.jpg 2x" type="image/jpg"/>
+                <source srcSet="/assets/gather_fishes_200x200.webp" type="image/webp"/>
+                <source srcSet="/assets/gather_fishes_200x200.jpg" type="image/png"/>
+                <img
+                    src="/assets/gather_fishes_200x200.jpg"
+                    className={styles.avaterIcon}
+                    alt="yammerjp avater icon"
+                    width="200px"
+                    height="200px"
+                />
+            </picture>
           </div>
           <div className={styles.avaterContainerEnd}>
             <div className={styles.avaterDescription}>
