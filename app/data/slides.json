@@ -1,18 +1,32 @@
 [
     {
+        "title": "実録 マルチテナント環境のGmailガイドライン対応",
+        "url": "https://speakerdeck.com/yammerjp/name-it-with-generative-ai",
+        "id": "https://speakerdeck.com/yammerjp/name-it-with-generative-ai",
+        "date_published": "2023-03-15T00:00:00+09:00",
+        "_content_html": "<script async class=\"speakerdeck-embed\" data-id=\"e47be4bcb39e4c2abdc4ea0ad2588cf4\" data-ratio=\"1.77725118483412\" src=\"//speakerdeck.com/assets/embed.js\"></script>",
+        "content_html": "<iframe class=\"speakerdeck-iframe\" frameborder=\"0\" src=\"https://speakerdeck.com/player/e47be4bcb39e4c2abdc4ea0ad2588cf4\" title=\"実録 マルチテナント環境のGmailガイドライン対応\" allowfullscreen=\"true\" mozallowfullscreen=\"true\" webkitallowfullscreen=\"true\" style=\"border: 0px; background: padding-box padding-box rgba(0, 0, 0, 0.1); margin: 0px; padding: 0px; border-radius: 6px; box-shadow: rgba(0, 0, 0, 0.2) 0px 5px 40px; width: 100%; aspect-ratio: 16/9;\" data-ratio=\"1.7777777777777777\"></iframe>"
+    }, {
         "title": "生成AIとの対話から、概念をみつけ、名前をつける",
         "url": "https://speakerdeck.com/yammerjp/name-it-with-generative-ai",
         "id": "https://speakerdeck.com/yammerjp/name-it-with-generative-ai",
-        "date_published": "2023-05-22T00:00:00+09:00",
+        "date_published": "2023-02-16T00:00:00+09:00",
         "_content_html": "<script async class=\"speakerdeck-embed\" data-id=\"3121d002b99643fab08188174ee03f61\" data-ratio=\"1.77725118483412\" src=\"//speakerdeck.com/assets/embed.js\"></script>",
         "content_html": "<iframe class=\"speakerdeck-iframe\" frameborder=\"0\" src=\"https://speakerdeck.com/player/3121d002b99643fab08188174ee03f61\" title=\" 生成AIとの対話から、概念をみつけ、名前をつける / Name it with generative AI\" allowfullscreen=\"true\" mozallowfullscreen=\"true\" webkitallowfullscreen=\"true\" style=\"border: 0px; background: padding-box padding-box rgba(0, 0, 0, 0.1); margin: 0px; padding: 0px; border-radius: 6px; box-shadow: rgba(0, 0, 0, 0.2) 0px 5px 40px; width: 100%; aspect-ratio: 16/9;\" data-ratio=\"1.7777777777777777\"></iframe>"
     }, {
         "title": "awkでつくってわかるWebアプリケーション",
         "url": "https://speakerdeck.com/yammerjp/web-application-implementation-in-awk",
         "id": "https://speakerdeck.com/yammerjp/web-application-implementation-in-awk",
-        "date_published": "2023-05-22T00:00:00+09:00",
+        "date_published": "2024-02-10T00:00:00+09:00",
         "_content_html": "<script async class=\"speakerdeck-embed\" data-id=\"e5bc4d40d6764c02911a0a00442bd6ee\" data-ratio=\"1.77725118483412\" src=\"//speakerdeck.com/assets/embed.js\"></script>",
         "content_html": "<iframe class=\"speakerdeck-iframe\" frameborder=\"0\" src=\"https://speakerdeck.com/player/e5bc4d40d6764c02911a0a00442bd6ee\" title=\"awkでつくってわかるWebアプリケーション / Web Application Implementation in awk\" allowfullscreen=\"true\" mozallowfullscreen=\"true\" webkitallowfullscreen=\"true\" style=\"border: 0px; background: padding-box padding-box rgba(0, 0, 0, 0.1); margin: 0px; padding: 0px; border-radius: 6px; box-shadow: rgba(0, 0, 0, 0.2) 0px 5px 40px; width: 100%; aspect-ratio: 16/9;\" data-ratio=\"1.7777777777777777\"></iframe>"
+    }, {
+        "title": "「次世代CTOs vs あんちぽ ぶつかり稽古 2023」栗林 健太郎/浅山 広大/中山 慶祐/能勢 晃【GMO Developers Day 2023】",
+        "url": "https://www.youtube.com/watch?v=vyCDA49AYLk",
+        "id": "https://www.youtube.com/watch?v=vyCDA49AYLk",
+        "date_published": "2023-12-06T00:00:00+09:00",
+        "_content_html": "<iframe style=\"width: 100%; aspect-ratio: 16/9;\" data-ratio=\"1.7777777777777777\" src=\"https://www.youtube.com/embed/vyCDA49AYLk?si=XDAVctlPS8HvtRqC\" title=\"YouTube video player\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share\" referrerpolicy=\"strict-origin-when-cross-origin\" allowfullscreen></iframe>",
+        "content_html": "<iframe  style=\"width: 100%; aspect-ratio: 16/9;\" data-ratio=\"1.7777777777777777\" src=\"https://www.youtube.com/embed/vyCDA49AYLk?si=XDAVctlPS8HvtRqC\" title=\"YouTube video player\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share\" referrerpolicy=\"strict-origin-when-cross-origin\" allowfullscreen></iframe>"
     }, {
         "title": "awk basics",
         "url": "https://speakerdeck.com/yammerjp/awk-basics",
