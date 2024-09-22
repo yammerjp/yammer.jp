@@ -33,7 +33,19 @@ const siteNameCorrespondences = [
   {
     applicableRegex: /^https:\/\/tech\.pepabo\.com/,
     siteName: 'Pepabo Tech Portal'
-  }
+  },
+  {
+    applicableRegex: /^https:\/\/www\.youtube\.com\//,
+    siteName: 'Youtube'
+  },
+  {
+    applicableRegex: /^https:\/\/listen\.style\/p\/h173club/,
+    siteName: 'h173.club on LISTEN'
+  },
+  {
+    applicableRegex: /^https:\/\/listen\.style\/p\/yammer/,
+    siteName: 'yammerの日記 on LISTEN'
+  },
 ]
 
 const url2fqdn = (url: string): string => {

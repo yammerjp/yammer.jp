@@ -23,6 +23,10 @@ export function TabSelector(
       to: '/feeds/related-posts',
     },
     {
+      label: '音声',
+      to: '/feeds/podcasts',
+    },
+    {
       label: '近況',
       to: '/feeds/murmurs',
     },
