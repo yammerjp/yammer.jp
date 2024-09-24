@@ -21,21 +21,18 @@ export async function fetchFeedsWithCache(context: AppLoadContext): Promise<Json
   return await withCache<JsonFeedItem[]>(async () => {
     const baseURL = "https://listen.style/p/yammer/rss"
 
-    let url = baseURL
     const items: JsonFeedItem[] = []
-    while(url) {
-      const xmlText = await fetch(baseURL).then(req => req.text());
-      const xmlObject = parse(xmlText)
 
-      items.push(...xmlObject.rss.channel.item.map(item => ({
-          id: item.link ?? '',
-          url: item.link ?? '',
-          title: item.title ?? '',
+    const xmlText = await fetch(baseURL).then(req => req.text());
+    const xmlObject = parse(xmlText)
+
+    items.push(...xmlObject.rss.channel.item.map(item => ({
+        id: item.link ?? '',
+        url: item.link ?? '',
+        title: item.title ?? '',
         content_text: item.description.replace(/<[^>]*>/g, "\n").replace(/LISTENで開く/,"").replace(/\&nbsp;/, "") ?? '',
-          date_published: new Date(item.pubDate ?? '').toISOString(),
-      })))
-      url = ""
-    }
+        date_published: new Date(item.pubDate ?? '').toISOString(),
+    })))
 
     items.push({
       id: "https://listen.style/p/h173club/rbu2xvan",
