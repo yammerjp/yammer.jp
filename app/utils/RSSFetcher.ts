@@ -44,7 +44,6 @@ export async function fetchRSS(baseURL: string, options?: Options): Promise<Json
                 contentText = item.description;
             }
 
-            console.log(item);
             const retItem = {
                 id: item.id ?? item.link ?? '',
                 url: url,

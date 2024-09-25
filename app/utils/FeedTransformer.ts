@@ -18,6 +18,10 @@ const siteNameCorrespondences = [
     siteName: 'Qiita'
   },
   {
+    applicableRegex: /^https:\/\/zenn\.dev\//,
+    siteName: 'Zenn'
+  },
+  {
     applicableRegex: /^https:\/\/microblog\.yammer\.jp/,
     siteName: 'microblog'
   },
