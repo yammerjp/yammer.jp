@@ -6,7 +6,7 @@ import type { AppLoadContext } from "@remix-run/cloudflare";
 import { FeedItemCards } from "../components/FeedItemCards";
 import { TabSelector } from "../components/TabSelector";
 import type { JsonFeedItem } from "../types/JsonFeedItem";
-import { PodcastFeedBuilder } from "../utils/FeedBuilder/PodcastFeedBuilder";
+import { PodcastFeedBuilder } from "../models/FeedBuilder/PodcastFeedBuilder";
 import { withCache } from "../utils/withCache";
 
 

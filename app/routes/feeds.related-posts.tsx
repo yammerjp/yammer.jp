@@ -4,9 +4,9 @@ import { useLoaderData } from "@remix-run/react";
 
 import { FeedItemCards } from "../components/FeedItemCards";
 import { TabSelector } from "../components/TabSelector";
-import { transformFeeds } from "../utils/FeedTransformer";
 import type { JsonFeedItem } from "../types/JsonFeedItem";
 import relatedPosts from "../data/related-posts.json";
+import { siteName } from "../models/RSSFetcher";
 
 export async function loader() {
   return json(
@@ -15,7 +15,7 @@ export async function loader() {
 }
 
 async function loadArticles(): Promise<{message: string, items: JsonFeedItem[]}> {
-  const feeds = await transformFeeds(relatedPosts);
+  const feeds = relatedPosts.map(e => ({...e, _site_name: siteName(e.url)}))
   if (feeds.length > 0) {
     return {message: "", items: feeds};
   } else {

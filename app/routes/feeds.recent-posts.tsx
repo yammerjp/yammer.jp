@@ -4,13 +4,12 @@ import { useLoaderData } from "@remix-run/react";
 
 import { FeedItemCards } from "../components/FeedItemCards";
 import { TabSelector } from "../components/TabSelector";
-import { transformFeeds } from "../utils/FeedTransformer";
 import type { JsonFeedItem } from "../types/JsonFeedItem";
 import { withCache } from "../utils/withCache";
 
 import type { AppLoadContext } from "@remix-run/cloudflare";
 
-import { RecentPostFeedBuilder } from "../utils/FeedBuilder/RecentPostFeedBuilder";
+import { RecentPostFeedBuilder } from "../models/FeedBuilder/RecentPostFeedBuilder";
 
 export async function loader({context}: LoaderFunctionArgs) {
   return json(
@@ -22,10 +21,10 @@ export async function loader({context}: LoaderFunctionArgs) {
 }
 
 export async function fetchFeedsWithCache(context: AppLoadContext): Promise<JsonFeedItem[]> {
-  return await withCache<JsonFeedItem[]>(async () => {
-    const feeds = await new RecentPostFeedBuilder().build();
-    return transformFeeds(feeds);
-  }, {context, key: 'caches/feeds/recent-posts'})
+  return await withCache<JsonFeedItem[]>(
+    () =>new RecentPostFeedBuilder().build(),
+    {context, key: 'caches/feeds/recent-posts'}
+  )
 }
 
 export const meta: MetaFunction = () => {

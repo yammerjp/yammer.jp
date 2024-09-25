@@ -1,10 +1,11 @@
 import { JsonFeedItem } from "../../types/JsonFeedItem";
 import FeedBuilder from "../../types/FeedBuilder";
 
-import { fetchRSS } from "../RSSFetcher";
+import { RSSFetcher } from "../../models/RSSFetcher";
 
 export default class MurmurFeedBuilder implements FeedBuilder {
   async build(): Promise<JsonFeedItem[]> {
-    return await fetchRSS("https://usememos.yammer.jp/u/yammer/rss.xml", {excludeTitle: true});
+    const fetcher = new RSSFetcher({ excludeTitle: true })
+    return await fetcher.fetch("https://usememos.yammer.jp/u/yammer/rss.xml")
   }
 }

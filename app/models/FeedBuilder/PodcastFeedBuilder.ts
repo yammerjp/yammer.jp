@@ -1,15 +1,16 @@
 import { JsonFeedItem } from "../../types/JsonFeedItem";
 import FeedBuilder from "../../types/FeedBuilder";
 
-import { fetchRSS } from "../RSSFetcher";
+import { RSSFetcher } from "../../models/RSSFetcher";
+
 import podcasts from "../../data/podcasts.json";
 
 export class PodcastFeedBuilder implements FeedBuilder {
     async build(): Promise<JsonFeedItem[]> {
-        const baseURL = "https://listen.style/p/yammer/rss"
+        const fetcher = new RSSFetcher()
 
         return [
-            ...await fetchRSS(baseURL),
+            ...await fetcher.fetch("https://listen.style/p/yammer/rss"),
             ...podcasts
         ]
     }

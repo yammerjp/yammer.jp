@@ -5,10 +5,9 @@ import type { AppLoadContext } from "@remix-run/cloudflare";
 
 import { FeedItemCards } from "../components/FeedItemCards";
 import { TabSelector } from "../components/TabSelector";
-import { transformFeeds } from "../utils/FeedTransformer";
 import type { JsonFeedItem } from "../types/JsonFeedItem";
 import { withCache } from "../utils/withCache";
-import MurmurFeedBuilder from "../utils/FeedBuilder/MurmurFeedBuilder";
+import MurmurFeedBuilder from "../models/FeedBuilder/MurmurFeedBuilder";
 
 export async function loader({context}: LoaderFunctionArgs) {
   return json({
@@ -18,9 +17,10 @@ export async function loader({context}: LoaderFunctionArgs) {
 }
 
 export async function fetchFeedsWithCache(context: AppLoadContext): Promise<JsonFeedItem[]> {
-  return await withCache<JsonFeedItem[]>(async () => {
-    return transformFeeds(await new MurmurFeedBuilder().build())
-  }, {context, key: 'caches/feeds/murmurs'})
+  return await withCache<JsonFeedItem[]>(
+    async () => new MurmurFeedBuilder().build(),
+    {context, key: 'caches/feeds/murmurs'}
+  )
 }
 
 export const meta: MetaFunction = () => {
