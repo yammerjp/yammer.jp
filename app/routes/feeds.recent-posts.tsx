@@ -10,6 +10,8 @@ import { withCache } from "../utils/withCache";
 
 import type { AppLoadContext } from "@remix-run/cloudflare";
 
+import { RecentPostFeedBuilder } from "../utils/FeedBuilder/RecentPostFeedBuilder";
+
 export async function loader({context}: LoaderFunctionArgs) {
   return json(
     {
@@ -21,8 +23,8 @@ export async function loader({context}: LoaderFunctionArgs) {
 
 export async function fetchFeedsWithCache(context: AppLoadContext): Promise<JsonFeedItem[]> {
   return await withCache<JsonFeedItem[]>(async () => {
-    const resObj = await fetch('https://rsss.yammer.jp/v0/json_feed').then(res => res.json()) as {items: JsonFeedItem[]};
-    return transformFeeds(resObj.items);
+    const feeds = await new RecentPostFeedBuilder().build();
+    return transformFeeds(feeds);
   }, {context, key: 'caches/feeds/recent-posts'})
 }
 

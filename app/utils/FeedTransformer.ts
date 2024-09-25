@@ -46,6 +46,10 @@ const siteNameCorrespondences = [
     applicableRegex: /^https:\/\/listen\.style\/p\/yammer/,
     siteName: 'yammerの日記 on LISTEN'
   },
+  {
+    applicableRegex: /^https:\/\/gihyo\.jp\//,
+    siteName: '技術評論社'
+  },
 ]
 
 const url2fqdn = (url: string): string => {
