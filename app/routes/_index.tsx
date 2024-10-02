@@ -1,4 +1,4 @@
-import type { MetaFunction } from "@remix-run/cloudflare";
+import type { MetaFunction, LinksFunction } from "@remix-run/cloudflare";
 import { useLoaderData } from "@remix-run/react";
 import { loader } from "./feeds.recent-posts";
 export { loader };
@@ -18,9 +18,18 @@ export default function Index() {
   </>
 }
 
+export const links: LinksFunction = () => {
+  return [
+    {
+      rel: "alternate",
+      href: "/feeds/recent-posts.xml",
+      title: "RSS2.0",
+    }
+  ]
+}
+
 export const meta: MetaFunction = () => {
   return [
-    { title: "yammer.jp" },
     {
       name: "description",
       content: "yammer is a Web Developper and a Scuba Diver",

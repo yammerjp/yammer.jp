@@ -1,4 +1,4 @@
-import type { LoaderFunctionArgs, MetaFunction } from "@remix-run/cloudflare";
+import type { LoaderFunctionArgs, MetaFunction, LinksFunction } from "@remix-run/cloudflare";
 import { json } from "@remix-run/cloudflare";
 import { useLoaderData } from "@remix-run/react";
 
@@ -32,6 +32,16 @@ export const meta: MetaFunction = () => {
     { title: "投稿 - yammer.jp" },
   ];
 };
+
+export const links: LinksFunction = () => {
+  return [
+    {
+      rel: "alternate",
+      href: "/feeds/recent-posts.xml",
+      title: "RSS2.0",
+    }
+  ]
+}
 
 export default function Index() {
   const {message, items} = useLoaderData<typeof loader>();

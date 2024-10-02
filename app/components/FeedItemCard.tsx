@@ -21,7 +21,7 @@ export const FeedItemCard = (props: {
 )
 }
 
-function description(str: string) {
+export function description(str: string) {
   const maxLength = 400;
   if (str.length && str.length <= maxLength) {
     return str;
