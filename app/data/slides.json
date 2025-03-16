@@ -1,5 +1,12 @@
 [
     {
+        "title": "「EC決済 開発責任者対談」 稲守貴久・中山慶祐・米山純司・末次 敦【GMO Developers Day 2024】 ",
+        "url": "https://www.youtube.com/watch?v=yVph1uLwK2o",
+        "id": "https://www.youtube.com/watch?v=yVph1uLwK2o",
+        "date_published": "2024-11-30T00:00:00+09:00",
+        "_content_html": "<iframe style=\"width: 100%; aspect-ratio: 16/9;\" data-ratio=\"1.7777777777777777\" src=\"https://www.youtube.com/embed/yVph1uLwK2o\" title=\"YouTube video player\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share\" referrerpolicy=\"strict-origin-when-cross-origin\" allowfullscreen></iframe>",
+        "content_html": "<iframe style=\"width: 100%; aspect-ratio: 16/9;\" data-ratio=\"1.7777777777777777\" src=\"https://www.youtube.com/embed/yVph1uLwK2o\" title=\"YouTube video player\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share\" referrerpolicy=\"strict-origin-when-cross-origin\" allowfullscreen></iframe>"
+    },    {
         "title": "実録 マルチテナント環境のGmailガイドライン対応",
         "url": "https://speakerdeck.com/yammerjp/name-it-with-generative-ai",
         "id": "https://speakerdeck.com/yammerjp/name-it-with-generative-ai",
