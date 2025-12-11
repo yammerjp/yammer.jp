@@ -30,6 +30,10 @@ export function TabSelector(
       label: '近況',
       to: '/feeds/murmurs',
     },
+    {
+      label: '写真',
+      to: '/feeds/photos',
+    },
   ]
     return (
       <div className={tabSelectorStyle.tabsContainer}>
