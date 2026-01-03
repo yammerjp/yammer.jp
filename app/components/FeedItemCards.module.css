@@ -5,3 +5,25 @@
 .jsonFeedItemCards {
 margin-top: 5px;
 }
+.readMoreLinks {
+  margin-top: 32px;
+  padding-top: 24px;
+  border-top: 1px solid #e0e0e0;
+}
+.readMoreLinks p {
+  margin-bottom: 8px;
+  color: #666;
+}
+.readMoreLinks ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  gap: 16px;
+}
+.readMoreLinks a {
+  color: #0066cc;
+  text-decoration: none;
+}
+.readMoreLinks a:hover {
+  text-decoration: underline;
+}

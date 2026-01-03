@@ -34,7 +34,7 @@ export default function Index() {
   return (
     <>
       <TabSelector selected="近況" />
-      <FeedItemCards items={items} message={message} />
+      <FeedItemCards items={items} message={message} showReadMoreLinks />
     </>
   );
 }
