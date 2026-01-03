@@ -1,5 +1,5 @@
-import type { MetaFunction, LinksFunction } from "@remix-run/cloudflare";
-import { useLoaderData } from "@remix-run/react";
+import type { MetaFunction, LinksFunction } from "react-router";
+import { useLoaderData } from "react-router";
 import { loader } from "./feeds.recent-posts";
 export { loader };
 

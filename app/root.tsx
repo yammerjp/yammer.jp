@@ -1,9 +1,4 @@
-import {
-  Links,
-  Meta,
-  Outlet,
-  Scripts,
-} from "@remix-run/react";
+import { Links, Meta, Outlet, Scripts } from "react-router";
 import "./styles/global.css";
 
 import rootStyle from "./styles/root.module.css";

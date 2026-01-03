@@ -1,6 +1,6 @@
-import type { MetaFunction } from "@remix-run/cloudflare";
-import { json } from "@remix-run/cloudflare";
-import { useLoaderData } from "@remix-run/react";
+import type { MetaFunction } from "react-router";
+
+import { useLoaderData } from "react-router";
 
 import { FeedItemCards } from "../components/FeedItemCards";
 import { TabSelector } from "../components/TabSelector";
@@ -9,9 +9,7 @@ import relatedPosts from "../data/related-posts.json";
 import { siteName } from "../models/RSSFetcher";
 
 export async function loader() {
-  return json(
-    await loadArticles()
-  );
+  return await loadArticles();
 }
 
 async function loadArticles(): Promise<{message: string, items: JsonFeedItem[]}> {

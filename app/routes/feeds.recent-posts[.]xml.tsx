@@ -1,4 +1,4 @@
-import type { LoaderFunctionArgs } from "@remix-run/cloudflare";
+import type { LoaderFunctionArgs } from "react-router";
 import { fetchFeedsWithCache } from "./feeds.recent-posts";
 import { buildRSSResponse } from "../utils/buildRSSResponse";
 

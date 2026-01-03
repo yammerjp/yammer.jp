@@ -1,7 +1,7 @@
-import type { MetaFunction, LoaderFunctionArgs } from "@remix-run/cloudflare";
-import { json } from "@remix-run/cloudflare";
-import { useLoaderData } from "@remix-run/react";
-import type { AppLoadContext } from "@remix-run/cloudflare";
+import type { MetaFunction, LoaderFunctionArgs } from "react-router";
+
+import { useLoaderData } from "react-router";
+import type { AppLoadContext } from "react-router";
 
 import { FeedItemCards } from "../components/FeedItemCards";
 import { TabSelector } from "../components/TabSelector";
@@ -10,10 +10,10 @@ import { withCache } from "../utils/withCache";
 import MurmurFeedBuilder from "../models/FeedBuilder/MurmurFeedBuilder";
 
 export async function loader({context}: LoaderFunctionArgs) {
-  return json({
+  return {
     message: "",
     items: await fetchFeedsWithCache(context)
-  });
+  };
 }
 
 export async function fetchFeedsWithCache(context: AppLoadContext): Promise<JsonFeedItem[]> {

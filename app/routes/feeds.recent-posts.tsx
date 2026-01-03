@@ -1,23 +1,20 @@
-import type { LoaderFunctionArgs, MetaFunction, LinksFunction } from "@remix-run/cloudflare";
-import { json } from "@remix-run/cloudflare";
-import { useLoaderData } from "@remix-run/react";
+import type { LoaderFunctionArgs, MetaFunction, LinksFunction } from "react-router";
+import { useLoaderData } from "react-router";
 
 import { FeedItemCards } from "../components/FeedItemCards";
 import { TabSelector } from "../components/TabSelector";
 import type { JsonFeedItem } from "../types/JsonFeedItem";
 import { withCache } from "../utils/withCache";
 
-import type { AppLoadContext } from "@remix-run/cloudflare";
+import type { AppLoadContext } from "react-router";
 
 import { RecentPostFeedBuilder } from "../models/FeedBuilder/RecentPostFeedBuilder";
 
 export async function loader({context}: LoaderFunctionArgs) {
-  return json(
-    {
-      message: "",
-      items: await fetchFeedsWithCache(context)
-    }
-  );
+  return {
+    message: "",
+    items: await fetchFeedsWithCache(context)
+  };
 }
 
 export async function fetchFeedsWithCache(context: AppLoadContext): Promise<JsonFeedItem[]> {

@@ -1,5 +1,5 @@
-import { redirect } from "@remix-run/cloudflare";
-import { LoaderFunctionArgs } from "@remix-run/cloudflare";
+import { redirect } from "react-router";
+import { LoaderFunctionArgs } from "react-router";
 
 const githubPagesRepositories = [
     "yammerjp.github.io",

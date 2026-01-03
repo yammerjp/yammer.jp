@@ -1,5 +1,5 @@
 import tabSelectorStyle from "./TabSelector.module.css";
-import { Link } from "@remix-run/react";
+import { Link } from "react-router";
 export function TabSelector(
     props: {
         selected: string;
