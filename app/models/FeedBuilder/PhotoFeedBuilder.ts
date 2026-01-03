@@ -1,6 +1,6 @@
 import { JsonFeedItem } from "../../types/JsonFeedItem";
 import FeedBuilder from "../../types/FeedBuilder";
-import { parse } from 'fast-xml-parser'
+import { XMLParser } from 'fast-xml-parser'
 
 export class PhotoFeedBuilder implements FeedBuilder {
     async build(): Promise<JsonFeedItem[]> {
@@ -9,10 +9,11 @@ export class PhotoFeedBuilder implements FeedBuilder {
     }
 
     private parse(xmlText: string): JsonFeedItem[] {
-        const xmlObject = parse(xmlText, {
+        const parser = new XMLParser({
             ignoreAttributes: false,
             attributeNamePrefix: "@_"
         })
+        const xmlObject = parser.parse(xmlText)
 
         const items = xmlObject.rss?.channel?.item ?? []
         return items.map((item: any) => {

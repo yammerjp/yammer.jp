@@ -1,4 +1,4 @@
-import { parse } from 'fast-xml-parser'
+import { XMLParser } from 'fast-xml-parser'
 import type { JsonFeedItem } from '../types/JsonFeedItem'
 
 type TextFetcher = (baseURL: string) => Promise<string>
@@ -27,10 +27,11 @@ export class RSSFetcher {
     }
 
     private parse(xmlText: string): JsonFeedItem[] {
-        const xmlObject = parse(xmlText,{
+        const parser = new XMLParser({
             ignoreAttributes: false,
-            attributeNamePrefix : "@_"
+            attributeNamePrefix: "@_"
         })
+        const xmlObject = parser.parse(xmlText)
 
         const articles = xmlObject.rss?.channel?.item ?? xmlObject.feed?.entry
         return articles.map((item: any) => {
