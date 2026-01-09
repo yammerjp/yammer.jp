@@ -8,6 +8,7 @@ type JsonFeedResponse = {
     title?: string;
     content_text?: string;
     date_published: string;
+    tags?: string[];
   }[];
 };
 
