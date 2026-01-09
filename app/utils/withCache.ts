@@ -10,7 +10,7 @@ const expirationTtl = revalidationTtl + 60 * 60 * 23;
 
 export async function withCache<T>(fn: () => Promise<T>, {context, key: keyPostfix}: CacheOptions) {
     const kv = context.cloudflare.env.YAMMER_JP_CACHE;
-    const key = `v202501031201/${keyPostfix}`
+    const key = `v202501090918/${keyPostfix}`
     const cachedStr = await kv.get(key)
     if (!cachedStr) {
         return withStore<T>(fn, {kv, key})
