@@ -72,7 +72,7 @@ export class RSSFetcher {
     }
 }
 
-function buildContentText(description: string) {
+export function buildContentText(description: string) {
     return description.
         replace(/&lt;/g, "<").
         replace(/&gt;/g, ">").

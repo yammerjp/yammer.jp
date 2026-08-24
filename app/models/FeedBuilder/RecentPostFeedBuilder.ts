@@ -1,18 +1,34 @@
 import { JsonFeedItem } from "../../types/JsonFeedItem";
 import FeedBuilder from "../../types/FeedBuilder";
 
-import { RSSFetcher } from "../../models/RSSFetcher";
+import { siteName, buildContentText } from "../../models/RSSFetcher";
+
+type JsonFeedResponse = {
+    items: {
+        id: string;
+        url: string;
+        title?: string;
+        content_text?: string;
+        date_published: string;
+    }[];
+};
 
 export class RecentPostFeedBuilder implements FeedBuilder {
     async build(): Promise<JsonFeedItem[]> {
-        const fetcher = new RSSFetcher()
-        const results = await Promise.all([
-            fetcher.fetch("https://memo.yammer.jp/posts/index.xml"),
-            fetcher.fetch("https://basd4g.hatenablog.com/feed"),
-            fetcher.fetch("https://awkblog.net/@yammerjp/rss.xml"),
-            fetcher.fetch("https://qiita.com/yammerjp/feed"),
-            fetcher.fetch("https://zenn.dev/basd4g/feed?include_scraps=1"),
-        ]);
-        return results.flat().sort((a, b) => new Date(b.date_published).getTime() - new Date(a.date_published).getTime());
+        const response = await fetch("https://yammerjp.github.io/feeds/posts/all.json");
+        if (!response.ok) {
+            throw new Error(`Failed to fetch posts/all.json: ${response.status} ${response.statusText}`);
+        }
+        const data: JsonFeedResponse = await response.json();
+        return data.items
+            .map((item) => ({
+                id: item.id,
+                url: item.url,
+                title: item.title ?? "",
+                content_text: item.content_text ? buildContentText(item.content_text) : undefined,
+                date_published: item.date_published,
+                _site_name: siteName(item.url),
+            }))
+            .sort((a, b) => new Date(b.date_published).getTime() - new Date(a.date_published).getTime());
     }
 }
